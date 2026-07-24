@@ -1,0 +1,11 @@
+// chaosnexus-scripts/plugins/dataset_generator/plugin.toml
+
+name = "dataset_generator"
+version = "0.1.0"
+description = "Native Rhai dataset generation tool for ChaosNexus Tuned fine-tuning matrices."
+author = "Tuned Chaos LLC"
+entry_script = "generator.rhai"
+
+[permissions]
+fs_write = true
+fs_read = true

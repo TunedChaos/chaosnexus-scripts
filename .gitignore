@@ -1,0 +1,7 @@
+# chaosnexus-scripts/.gitignore
+
+# Runtime event / local Anvil state under the scripts root (never publish)
+.chaoswrench_data/
+.pending/
+data/
+dataset/
