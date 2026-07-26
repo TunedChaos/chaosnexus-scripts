@@ -16,6 +16,7 @@ fn on_plugin_start() {
     }
 }
 
+
 /// Lifecycle hook executed after all plugins have loaded into the engine.
 // --- [NODE: on_all_plugins_loaded] ---
 fn on_all_plugins_loaded() {
