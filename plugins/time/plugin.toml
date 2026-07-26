@@ -1,0 +1,6 @@
+name = "time"
+version = "1.0.0"
+dependencies = []
+
+[capabilities]
+granted = ["net_http"]

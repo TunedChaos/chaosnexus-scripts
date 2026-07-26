@@ -1,0 +1,8 @@
+name = "http_check"
+version = "0.1.0"
+author = "ChaosNexus Anvil"
+description = "Rhai plugin that performs an HTTP GET request to a specified URL, extracts the HTTP status code and a JSON field (e.g., 'url' from the response), and prints a formatted summary. The script includes comprehensive comments for review."
+prefix = "http_check"
+dependencies = []
+[capabilities]
+granted = []

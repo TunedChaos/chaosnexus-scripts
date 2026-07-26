@@ -1,0 +1,5 @@
+name = "translation_test"
+version = "0.1.0"
+author = "Tester"
+description = "Test plugin for translation layer"
+entry = "translation_test_tool.rhai"
