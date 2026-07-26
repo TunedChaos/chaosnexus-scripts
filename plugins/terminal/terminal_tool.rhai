@@ -2,7 +2,6 @@
 
 /// Lifecycle hook executed when the terminal plugin starts.
 /// Dynamically registers configured shell commands as MCP tools.
-// --- [NODE: on_plugin_start] ---
 fn on_plugin_start() {
     let cfg = load_config(PLUGIN_NAME, "config.toml");
     
@@ -18,7 +17,6 @@ fn on_plugin_start() {
 
 
 /// Lifecycle hook executed after all plugins have loaded into the engine.
-// --- [NODE: on_all_plugins_loaded] ---
 fn on_all_plugins_loaded() {
     print("[terminal] Ready to execute configured commands.");
 }
@@ -26,7 +24,6 @@ fn on_all_plugins_loaded() {
 /// Main execution handler for terminal tools.
 /// @param tool_name The full or short name of the command to execute.
 /// @param args Map containing arguments passed from the MCP client.
-// --- [NODE: execute] ---
 fn execute(tool_name, args) {
     let cfg = load_config(PLUGIN_NAME, "config.toml");
     let key = tool_name;

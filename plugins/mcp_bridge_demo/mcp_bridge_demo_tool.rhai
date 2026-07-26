@@ -9,7 +9,6 @@
 
 /// Lifecycle hook executed when the mcp_bridge_demo plugin starts.
 /// Registers mcp_bridge_probe and mcp_bridge_relay tools.
-// --- [NODE: on_plugin_start] ---
 fn on_plugin_start() {
     let probe_schema = "{\"type\":\"object\",\"properties\":{" +
         "\"command\":{\"type\":\"string\",\"description\":\"Executable to launch the MCP server (e.g. npx).\"}," +
@@ -28,7 +27,6 @@ fn on_plugin_start() {
 
 /// Launches an external MCP stdio server and queries its available tool definitions.
 /// @param args Map containing `command` and optional `args` list.
-// --- [NODE: probe] ---
 fn probe(args) {
     let command = args.command;
     let cmd_args = if args.contains("args") { args.args } else { [] };
@@ -46,7 +44,6 @@ fn probe(args) {
 
 /// Launches an external MCP stdio server and forwards a tool call request to it.
 /// @param args Map containing `command`, `args`, `tool`, and `tool_args`.
-// --- [NODE: relay] ---
 fn relay(args) {
     let command = args.command;
     let cmd_args = if args.contains("args") { args.args } else { [] };
@@ -60,7 +57,6 @@ fn relay(args) {
 }
 
 /// Tool execution router for MCP bridge demo tools.
-// --- [NODE: execute] ---
 fn execute(tool_name, args) {
     if tool_name == "mcp_bridge_probe" || tool_name.ends_with("mcp_bridge_probe") {
         return probe(args);

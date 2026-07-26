@@ -6,7 +6,6 @@
 
 /// Lifecycle hook executed when the dataset_generator plugin starts.
 /// Registers the `generate_synthetic_datasets` MCP tool.
-// --- [NODE: on_plugin_start] ---
 fn on_plugin_start() {
     let schema_str = "{\"type\":\"object\",\"properties\":{" +
         "\"output_dir\":{\"type\":\"string\",\"description\":\"Target output directory relative to scripts root (default: chaosnexus-tuned/datasets/core).\"}" +
@@ -40,7 +39,6 @@ fn make_sharegpt_entry(human_val, gpt_val) {
 
 /// Main logic for generating dataset files natively.
 /// @param args Map containing optional `output_dir`.
-// --- [NODE: generate_synthetic_datasets] ---
 fn generate_synthetic_datasets(args) {
     let out_dir = "chaosnexus-tuned/datasets/core";
     if args.contains("output_dir") && args.output_dir != "" {
@@ -109,7 +107,6 @@ fn generate_synthetic_datasets(args) {
 }
 
 /// Tool execution router.
-// --- [NODE: execute] ---
 fn execute(tool_name, args) {
     if tool_name == "generate_synthetic_datasets" || tool_name.ends_with("generate_synthetic_datasets") {
         return generate_synthetic_datasets(args);
