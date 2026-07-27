@@ -23,7 +23,7 @@ fn execute(tool_name, params) {
         return response;
     } else if tool_name == "ws_connect_demo" {
         let url = params.url;
-        // ws_connect doesn't return anything but it establishes the connection and invokes the callback on message
+        // ws_connect does not return anything but it establishes the connection and invokes the callback on message
         ws_connect(PLUGIN_NAME, url, "on_ws_message");
         return "WebSocket connection established. Call ws_close_demo with the same URL to disconnect.";
     } else if tool_name == "ws_close_demo" {
