@@ -1,5 +1,5 @@
 name = "translation_test"
 version = "0.1.0"
-author = "Tester"
-description = "Test plugin for translation layer"
+author = "Tuned Chaos"
+description = "Hello World (i18n) – Suite / Scripts example plugin"
 entry = "translation_test_tool.rhai"

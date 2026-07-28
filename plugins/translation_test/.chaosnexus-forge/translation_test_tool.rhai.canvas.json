@@ -1,0 +1,145 @@
+{
+  "version": 3,
+  "nodes": [
+    {
+      "id": "main_group",
+      "label": "Main Logic",
+      "x": 50,
+      "y": 50,
+      "type": "group",
+      "style": "width: 652.5559119097215px; height: 1513.8788417795133px;",
+      "class": "main-logic-group border-2 !border-primary/80 bg-primary/10 rounded-xl"
+    },
+    {
+      "id": "evt_1",
+      "label": "on_plugin_start",
+      "x": 12.721360857527648,
+      "y": 45.009204968125836,
+      "parentId": "main_group",
+      "kind": "event",
+      "eventId": "on_plugin_start"
+    },
+    {
+      "id": "scr_2",
+      "label": "on_plugin_start",
+      "x": 298.9121906713096,
+      "y": -25.096555468657705,
+      "parentId": "main_group",
+      "kind": "script",
+      "scriptBody": "perform_test_translations();"
+    },
+    {
+      "id": "evt_perf",
+      "label": "perform_test_translations",
+      "x": -42.71346352993292,
+      "y": 373.93058189590556,
+      "parentId": "main_group",
+      "kind": "event",
+      "eventId": "perform_test_translations"
+    },
+    {
+      "id": "scr_t1",
+      "label": "translate hello/en",
+      "x": 367.86130369876776,
+      "y": 260.98221642717687,
+      "parentId": "main_group",
+      "kind": "script",
+      "scriptBody": "log_info(PLUGIN_NAME, translate(PLUGIN_NAME, \"hello\", \"en\", [\"World\"]));"
+    },
+    {
+      "id": "scr_t2",
+      "label": "translate welcome/es",
+      "x": 217.286259308591,
+      "y": 513.8107152882543,
+      "parentId": "main_group",
+      "kind": "script",
+      "scriptBody": "log_info(PLUGIN_NAME, translate(PLUGIN_NAME, \"welcome\", \"es\", [\"ChaosNexus Anvil\", \"Amigo\"]));"
+    },
+    {
+      "id": "scr_t3",
+      "label": "fallback_test",
+      "x": 392.5559119097215,
+      "y": 750.191034734263,
+      "parentId": "main_group",
+      "kind": "script",
+      "scriptBody": "log_info(PLUGIN_NAME, translate(PLUGIN_NAME, \"fallback_test\", \"es\", []));"
+    },
+    {
+      "id": "scr_t4",
+      "label": "missing_key",
+      "x": 307.127606701698,
+      "y": 1031.7884766831658,
+      "parentId": "main_group",
+      "kind": "script",
+      "scriptBody": "log_info(PLUGIN_NAME, translate(PLUGIN_NAME, \"missing_key\", \"en\", []));"
+    },
+    {
+      "id": "evt_3",
+      "label": "on_all_plugins_loaded",
+      "x": 10.61098332818696,
+      "y": 1114.5054836922534,
+      "parentId": "main_group",
+      "kind": "event",
+      "eventId": "on_all_plugins_loaded"
+    },
+    {
+      "id": "scr_4",
+      "label": "on_all_plugins_loaded",
+      "x": 271.3733229267419,
+      "y": 1323.8788417795133,
+      "parentId": "main_group",
+      "kind": "script",
+      "scriptBody": "log_info(PLUGIN_NAME, \"All translation checks completed successfully.\");"
+    }
+  ],
+  "edges": [
+    {
+      "id": "wire_1",
+      "source": "evt_1",
+      "target": "scr_2",
+      "sourceHandle": "then",
+      "targetHandle": "exec_in",
+      "kind": "exec"
+    },
+    {
+      "id": "wire_3",
+      "source": "evt_perf",
+      "target": "scr_t1",
+      "sourceHandle": "then",
+      "targetHandle": "exec_in",
+      "kind": "exec"
+    },
+    {
+      "id": "wire_4",
+      "source": "scr_t1",
+      "target": "scr_t2",
+      "sourceHandle": "exec_out",
+      "targetHandle": "exec_in",
+      "kind": "exec"
+    },
+    {
+      "id": "wire_5",
+      "source": "scr_t2",
+      "target": "scr_t3",
+      "sourceHandle": "exec_out",
+      "targetHandle": "exec_in",
+      "kind": "exec"
+    },
+    {
+      "id": "wire_6",
+      "source": "scr_t3",
+      "target": "scr_t4",
+      "sourceHandle": "exec_out",
+      "targetHandle": "exec_in",
+      "kind": "exec"
+    },
+    {
+      "id": "wire_2",
+      "source": "evt_3",
+      "target": "scr_4",
+      "sourceHandle": "then",
+      "targetHandle": "exec_in",
+      "kind": "exec"
+    }
+  ]
+}

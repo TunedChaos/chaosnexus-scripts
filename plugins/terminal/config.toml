@@ -1,2 +1,0 @@
-[commands]
-test_echo = { command = "echo \"Hello, Chaos!\"", requires_confirmation = false }
