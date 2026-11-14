@@ -1,0 +1,9 @@
+name = "http_get_demo"
+version = "0.1.0"
+description = "Demonstrates HTTP GET against an allowlisted host"
+dependencies = []
+entry = "http_get_demo_tool.rhai"
+
+[capabilities]
+granted = ["net_http"]
+# Host must set permissions.http = ["GET"] and an explicit net_allowlist (no bare *).

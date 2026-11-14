@@ -1,0 +1,9 @@
+name = "noaa_ghcn_demo"
+version = "0.1.0"
+description = "NOAA GHCN-Daily twelve-city demo helpers (station list + optional CSV fetch)"
+dependencies = []
+entry = "noaa_ghcn_demo_tool.rhai"
+
+[capabilities]
+granted = ["net_http"]
+# Host: permissions.http=["GET"], net_allowlist=["www.ncei.noaa.gov"]

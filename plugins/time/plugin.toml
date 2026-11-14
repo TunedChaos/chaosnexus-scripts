@@ -1,0 +1,9 @@
+name = "time"
+version = "1.0.0"
+description = "System clock (and optional NTP) tools"
+dependencies = []
+entry = "time_tool.rhai"
+
+[capabilities]
+granted = []
+# Host must grant net_http + net_allowlist for get_ntp_time (e.g. pool.ntp.org).
